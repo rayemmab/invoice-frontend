@@ -1,9 +1,7 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <header>
+  <header class="text-black bg-white min-h-screen">
     <img
       alt="Vue logo"
       class="logo"
