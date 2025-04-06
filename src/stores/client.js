@@ -1,4 +1,4 @@
-import { fetchData } from "@/utils/fetch";
+import { fetchData } from "./../utils/fech";
 import { defineStore } from "pinia";
 
 export const useClientStore = defineStore("client", {

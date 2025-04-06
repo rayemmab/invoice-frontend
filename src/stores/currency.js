@@ -1,19 +1,19 @@
 import { fetchData } from "./../utils/fech";
 import { defineStore } from "pinia";
 
-export const useInvoiceStore = defineStore("invoice", {
+export const useCurrencyStore = defineStore("currency", {
   state: () => ({
-    invoices: [],
-    invoice: {},
+    currencies: [],
+    currencyt: {},
     loading: false,
   }),
   actions: {
     async get() {
       this.loading = true;
       try {
-        const data = await fetchData("/invoices");
+        const data = await fetchData("/currencies");
 
-        this.invoices = data.data;
+        this.currencies = data.data;
       } catch (error) {
         console.error("Erreur:", error);
       } finally {
@@ -25,9 +25,9 @@ export const useInvoiceStore = defineStore("invoice", {
       this.loading = true;
 
       try {
-        const data = await fetchData(`/invoices/${id}`);
+        const data = await fetchData(`/currencies/${id}`);
 
-        this.invoice = data.data;
+        this.currencyt = data.data;
       } catch (error) {
         console.error("Erreur:", error);
       } finally {
