@@ -14,9 +14,25 @@ const router = createRouter({
       },
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
+      path: "/clients",
+      name: "client",
+      component: () => import("../views/ClientView.vue"),
+      meta: {
+        layout: Dashboard,
+      },
+    },
+    {
+      path: "/users",
+      name: "user",
+      component: () => import("../views/UserView.vue"),
+      meta: {
+        layout: Dashboard,
+      },
+    },
+    {
+      path: "/currencies",
+      name: "currency",
+      component: () => import("../views/CurrencyView.vue"),
       meta: {
         layout: Dashboard,
       },

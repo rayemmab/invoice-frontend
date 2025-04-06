@@ -1,14 +1,38 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { fetchData } from "@/utils/fetch";
+import { defineStore } from "pinia";
 
-export const useClientStore = defineStore('client', () => {
-    const count = ref(0)
+export const useClientStore = defineStore("client", {
+  state: () => ({
+    clients: [],
+    client: {},
+    loading: false,
+  }),
+  actions: {
+    async get() {
+      this.loading = true;
+      try {
+        const data = await fetchData("/clients");
 
-    const doubleCount = computed(() => count.value * 2)
+        this.clients = data.data;
+      } catch (error) {
+        console.error("Erreur:", error);
+      } finally {
+        this.loading = false;
+      }
+    },
 
-    function increment() {
-        count.value++
-    }
+    async show(id) {
+      this.loading = true;
 
-    return { count, doubleCount, increment }
-})
+      try {
+        const data = await fetchData(`/clients/${id}`);
+
+        this.client = data.data;
+      } catch (error) {
+        console.error("Erreur:", error);
+      } finally {
+        this.loading = false;
+      }
+    },
+  },
+});
