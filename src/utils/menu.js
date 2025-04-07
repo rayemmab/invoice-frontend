@@ -1,7 +1,7 @@
 export const dashboardMenu = [
   {
     name: "Factures",
-    link: "/",
+    link: "/invoices",
   },
   {
     name: "Clients",

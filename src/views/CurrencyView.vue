@@ -30,7 +30,7 @@ const columns = [
 <template>
   <Table :columns="columns" :data="currencyStore.currencies">
     <template #is_default="{ row }">
-      <strong>{{ row.is_default ? "Oui" : "Non" }}</strong>
+      <strong>{{ row.is_default ? 'Oui' : 'Non' }}</strong>
     </template>
   </Table>
 </template>

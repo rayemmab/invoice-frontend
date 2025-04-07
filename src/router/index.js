@@ -36,6 +36,14 @@ const router = createRouter({
       meta: {
         layout: Dashboard,
       },
+    }
+    ,{
+      path: "/invoices",
+      name: "invoice",
+      component: () => import("../views/InvoiceView.vue"),
+      meta: {
+        layout: Dashboard,
+      },
     },
   ],
 });
