@@ -28,5 +28,5 @@ const columns = [
 </script>
 
 <template>
-  <Table :columns="columns" :data="invoiceStore.users" />
+  <Table :columns="columns" :data="invoiceStore.invoices" />
 </template>
