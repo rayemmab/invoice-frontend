@@ -18,7 +18,7 @@ const columns = [
   },
   {
     key: "status",
-    label: "Status",
+    label: "Statut",
   },
   {
     key: "issue_date",
